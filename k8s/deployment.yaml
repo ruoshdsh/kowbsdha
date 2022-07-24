@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wykgwdh
+
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wykgwdh
+
+
+  template:
+    metadata:
+      labels:
+        app: wykgwdh
+
+
+    spec:
+      containers:
+      - image: okteto.dev/wykgwdh:latest
+        name: wykgwdh
+
+
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "bdff34bc-6dd7-4d0f-9805-e59aa808d5cc"
+        - name: Vless_Path
+          value: "/vlas5sghw7r"
+        - name: Vmess_UUID
+          value: "bdff34bc-6dd7-4d0f-9805-e59aa808d5cc"
+        - name: Vmess_Path
+          value: "/vm7ke52w9yg"
+        - name: Share_Path
+          value: "/v2link"
